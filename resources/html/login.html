@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="content container py-2">
+    <form method="POST" action="/api/login">
+        {% csrf-field %}
+        <div class="form-group">
+            <div class="field">
+                <label for="login">Login</label>
+                <input type="text" class="form-control" name="login" value="{{login}}"
+                placeholder="Enter login" />
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" value="{{password}}" placeholder="Password" />
+        </div>
+        
+        <button type="submit" value="register" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}
